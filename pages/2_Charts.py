@@ -30,6 +30,8 @@ fig.update_layout(
     yaxis_title="Salary Percent Increase"
 )
 st.plotly_chart(fig)
+st.write("This scatterplot shows the relationship between the starting median salaries of different undergraduate majors and the percent increase to their middle of career salary. This plot can be understood by correlating the percentage increase of the median salary on the left with the starting salary for each undergraduate at the bottom of the plot. More information can be seen by hovering over any given point.")
+st.write("This data shows that there is a much greater difference in the spread of percentage increases at lower starting salaries, ranging from a 38.6 percent increase to 105.3 percent increase for salaries below 50.3k. This trend changes at higher salaries though, and the average percent increase of salaries changes to have a very similar average value, however has the lowest percent increases are found in this higher salary range. While the average percent increase is about the same, the spread is much tighter, only ranging from 61.7 percent to 75 percent ignoring the two low value outliers.")
 
 fig = px.line(df_sorted, x="Starting Median Salary", y="Mid-Career 90th Percentile Salary", title="Upper Salary Limit Based On Starting Salary")
 st.plotly_chart(fig)
