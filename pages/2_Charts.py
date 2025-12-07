@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import os
 
-data_path = os.path.join(os.getcwd(), "data", "MrBeast_youtube_stats")
+data_path = os.path.join(os.getcwd(), "data", "MrBeast_youtube_stats.csv")
 df = pd.read_csv(data_path)
 df_sorted = df.sort_values(by="Starting Median Salary")
 
