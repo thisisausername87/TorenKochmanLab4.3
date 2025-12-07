@@ -5,7 +5,7 @@ import os
 
 data_path = os.path.join(os.getcwd(), "data", "MrBeast_youtube_stats.csv")
 df = pd.read_csv(data_path)
-df_sorted = df.sort_values(by="Starting Median Salary")
+df_sorted = df.sort_values(by="viewCount")
 
 st.title("Different Types of Charts")
 st.subheader("This page shows various examples of different charts relating to the data and how to read them, along with some insights that can be gained from looking at the data.")
