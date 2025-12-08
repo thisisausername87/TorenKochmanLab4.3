@@ -22,3 +22,7 @@ Dataset Link - https://www.kaggle.com/datasets/robikscube/mr-beast-youtube-video
 Records - 212
 
 Requirements:
+
+streamlit>=1.36
+pandas>=2.2
+plotly>=5.22
