@@ -15,7 +15,7 @@ Future Work - A brief overview of work potential additions to the page.
 Name - Toren Kochman
 Email - tkochman@msudenver.edu
 
-DataL:
+Data:
 
 Dataset Name - Mr Beast Youtube Video Statistics
 Dataset Link - https://www.kaggle.com/datasets/robikscube/mr-beast-youtube-video-statistics
