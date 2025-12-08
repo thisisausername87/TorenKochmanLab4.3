@@ -26,3 +26,7 @@ Requirements:
 streamlit>=1.36
 pandas>=2.2
 plotly>=5.22
+
+AI Note:
+
+Generative AI was not used in the creation of this page.
