@@ -39,10 +39,10 @@ st.write("This scatterplot shows the relationship between the duration of Mr Bea
 st.write("This data shows that there is a very standard video duration for the videos, and there is a slight correlation of number of views with the duration of the video. This trend changes for longer videos, with the six exceptions to the video length having lower numbers of views on average. Within the standard video range, it seems that the videos that perform the best are on average a maximum of about 1550 or less seconds, or about 25 minutes or less on average.")
 
 fig = px.line(df_sorted, x="viewCount", y="likeCount", title="Upper Salary Limit Based On Starting Salary")
-st.plotly_chart(fig)
 fig.update_layout(
     xaxis_title="View Count",
     yaxis_title="Like Count"
 )
+st.plotly_chart(fig)
 st.write("This line chart shows the relationship between the view counts of different videos and the number of likes on each of the videos. This plot can be understood by correlating the number of likes on the left with the correlating view count on the bottom and seeing where they intersect on the line. More information can be seen by hovering over the line.")
 st.write("This data shows that the like counts for a video tend to have a positive linear correlation with the view count of a video with a few notable outliers. Most videos tend to follow somewhat of a trend of 1 million likes per every 50 million views, however there is one extremely unusual statistic with 19 million likes for 96.5 million views. The other most significant statistic is 12.25 million likes for 178.75 million views.") 
