@@ -61,7 +61,6 @@ fig3 = px.scatter(
     filtered_df,
     x="likeCount",
     y="commentCount",
-    trendline="ols",
     title="Like Count vs Comment Count"
 )
 st.plotly_chart(fig3, use_container_width=True)
