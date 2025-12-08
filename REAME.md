@@ -29,4 +29,4 @@ plotly>=5.22
 
 AI Note:
 
-Generative AI was not used in the creation of this page.
+Generative AI was used in the creation of this page.
