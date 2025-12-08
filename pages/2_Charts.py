@@ -22,8 +22,8 @@ fig.update_layout(
     yaxis_title="Count"
 )
 st.plotly_chart(fig)
-st.write("This histogram shows the number of jobs that are in each starting median slary range. The number of jobs in each salary range can be seen by correlating the count value on the left with the blocks of salary ranges at the bottom. More detailed information can be seen by hovering over the blocks.")
-st.write("This data shows that the vast majority of jobs have a starting median salary of below around 50k per year. Some of the most notable data points in the graph are the lowest and highest valued bins, with 3 jobs having a starting salary below 35k per year and only 1 job having a starting salary of above 70k per year. This distribution is heavily right skewed with most jobs having a starting salary in the range of about 35k to 45k.")
+st.write("This histogram shows the number of videos that are in different ranges of number of views. The number of videos in each view range can be seen by correlating the count value on the left with the blocks of view counts at the bottom. More detailed information can be seen by hovering over the blocks.")
+st.write("This data shows that most videos made by Mr Beast are in a right skewed data formation. The largest bin is from 0 to 9.9 million views, and the amount of views above 109.99 million views drops off significantly with much fewer videos surpassing this. This can be analyzed as the highest amount of views to be expected on an average video, and anything about around 109.99 million is a very well performing video.")
 
 fig = px.scatter(df_sorted, x="duration_seconds", y="viewCount", title="Percent Salary Increase Based on Starting Salary")
 fig.update_layout(
@@ -31,8 +31,8 @@ fig.update_layout(
     yaxis_title="Nunber of Views"
 )
 st.plotly_chart(fig)
-st.write("This scatterplot shows the relationship between the starting median salaries of different undergraduate majors and the percent increase to their middle of career salary. This plot can be understood by correlating the percentage increase of the median salary on the left with the starting salary for each undergraduate at the bottom of the plot. More information can be seen by hovering over any given point.")
-st.write("This data shows that there is a much greater difference in the spread of percentage increases at lower starting salaries, ranging from a 38.6 percent increase to 105.3 percent increase for salaries below 50.3k. This trend changes at higher salaries though, and the average percent increase of salaries changes to have a very similar average value, however has the lowest percent increases are found in this higher salary range. While the average percent increase is about the same, the spread is much tighter, only ranging from 61.7 percent to 75 percent ignoring the two low value outliers.")
+st.write("This scatterplot shows the relationship between the duration of Mr Beast videos and the number of views on each video. This plot can be understood by correlating the number of views on the left with the video duration values at the bottom of the plot. More information can be seen by hovering over any given point.")
+st.write("This data shows that there is a very standard video duration for the videos, and there is a slight correlation of number of views with the duration of the video. This trend changes for longer videos, with the six exceptions to the video length having lower numbers of views on average. Within the standard video range, it seems that the videos that perform the best are on average a maximum of about 1550 or less seconds, or about 25 minutes or less on average.")
 
 fig = px.line(df_sorted, x="viewCount", y="likeCount", title="Upper Salary Limit Based On Starting Salary")
 st.plotly_chart(fig)
