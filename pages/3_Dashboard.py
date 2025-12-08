@@ -11,3 +11,6 @@ st.sidebar.title("Select Visual Charts")
 st.sidebar.markdown("Select the Charts/Plots accordingly:")
 
 chart_visual = st.sidebar.selectbox('Select Charts/Plot type', ('Line Chart', 'Bar Chart', 'Bubble Chart'))
+st.sidebar.checkbox("Show Analysis by View Count", True, key=1)
+
+selected_status = st.sidebar.selectbox('Select View Values', options=['Less than 100M', 'Less than 50M', 'Less than 25m'])
