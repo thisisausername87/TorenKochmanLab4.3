@@ -12,6 +12,10 @@ st.title("Different Types of Charts")
 st.subheader("This page shows various examples of different charts relating to the data and how to read them, along with some insights that can be gained from looking at the data.")
 
 fig = px.box(views)
+fig.update_layout(
+    xaxis_title="View Count",
+    yaxis_title="Value"
+)
 st.plotly_chart(fig)
 st.write("This box plot shows the summary statistics for the view counts of Mr Beast videos.. The plot is understood by looking at the five lines of the plot, being the minimum, first quartile, median, third quartile, and maximum from bottom to top. More information can be seen by hovering over the plot.") 
 st.write("This data shows that the median amount of views of a Mr Beast video is about 49 million. There are a few significant values, although none seem to be outliers. One conclusion that can be drawn from this is that on average a video published by Mr Beast will get anywhere from about 14 to 81 million views.")
@@ -36,5 +40,9 @@ st.write("This data shows that there is a very standard video duration for the v
 
 fig = px.line(df_sorted, x="viewCount", y="likeCount", title="Upper Salary Limit Based On Starting Salary")
 st.plotly_chart(fig)
+fig.update_layout(
+    xaxis_title="View Count",
+    yaxis_title="Like Count"
+)
 st.write("This line chart shows the relationship between the view counts of different videos and the number of likes on each of the videos. This plot can be understood by correlating the number of likes on the left with the correlating view count on the bottom and seeing where they intersect on the line. More information can be seen by hovering over the line.")
 st.write("This data shows that the like counts for a video tend to have a positive linear correlation with the view count of a video with a few notable outliers. Most videos tend to follow somewhat of a trend of 1 million likes per every 50 million views, however there is one extremely unusual statistic with 19 million likes for 96.5 million views. The other most significant statistic is 12.25 million likes for 178.75 million views.") 
