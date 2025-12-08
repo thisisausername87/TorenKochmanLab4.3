@@ -49,19 +49,19 @@ st.write(f"**Videos matching filters:** {len(filtered_df)}")
 
 fig1 = px.scatter(
     filtered_df,
-    x="duration_seconds",
-    y="viewCount",
+    x="Video Duration in Seconds",
+    y="Views",
     size="likeCount",
     color="commentCount",
     hover_data=["likeCount", "commentCount"],
-    title="Duration vs View Count (Bubble size = likes)"
+    title="View Count by Video Duration"
 )
 st.plotly_chart(fig1, use_container_width=True)
 
 fig2 = px.bar(
     filtered_df.sort_values("viewCount", ascending=False),
-    x="viewCount",
-    y="likeCount",
+    x="Views",
+    y="Likes",
     hover_data=["commentCount", "duration_seconds"],
     title="Like Count by View Count",
 )
@@ -69,15 +69,15 @@ st.plotly_chart(fig2, use_container_width=True)
 
 fig3 = px.scatter(
     filtered_df,
-    x="likeCount",
-    y="commentCount",
-    title="Like Count vs Comment Count"
+    x="Likes",
+    y="Number of Comments",
+    title="Likes on a Video by Comments"
 )
 st.plotly_chart(fig3, use_container_width=True)
 
 fig4 = px.histogram(
     filtered_df,
-    x="duration_seconds",
+    x="Video Duration in Seconds",
     nbins=20,
     title="Distribution of Video Duration"
 )
