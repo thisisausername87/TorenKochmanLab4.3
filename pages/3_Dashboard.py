@@ -100,3 +100,5 @@ fig4.update_layout(
     yaxis_title="Count"
 )
 st.plotly_chart(fig4, use_container_width=True)
+
+st.subheader("Findings and Insights on Data")
