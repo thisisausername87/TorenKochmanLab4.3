@@ -102,3 +102,7 @@ fig4.update_layout(
 st.plotly_chart(fig4, use_container_width=True)
 
 st.subheader("Findings and Insights on Data")
+st.write("These charts and their filters show numerous insights pertaining to the statistics of Mr Beast videos.")
+st.write("The first chart upon decreasing the video duration reveals that there is a slight positive correlation between the video duration and the number of likes the video has.")
+st.write("The third chart shows the strong positive correlation between the number of likes and comments on a video, with a few notable outlier statistics, two with many likes and fewer comments, and one with fewer likes and a high amount of comments.")
+st.write("The fourth chart shows the distribution of video lengths, with a very noticable weight of a very specific video length. Decreasing the maximum duration length shows that the main segment is actually bimodal, with one peak around 3 minutes in duration and the other peak around 15 minutes in duration.")
