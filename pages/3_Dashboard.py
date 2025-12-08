@@ -6,10 +6,7 @@ import os
 data_path = os.path.join(os.getcwd(), "data", "MrBeast_youtube_stats.csv")
 df = pd.read_csv(data_path)
 
-
 st.sidebar.header("Filters")
-
-# --- View Count Filter ---
 min_views = int(df["viewCount"].min())
 max_views = int(df["viewCount"].max())
 
@@ -20,7 +17,6 @@ view_filter = st.sidebar.slider(
     value=(min_views, max_views)
 )
 
-# --- Like Count Filter ---
 min_likes = int(df["likeCount"].min())
 max_likes = int(df["likeCount"].max())
 
@@ -31,7 +27,6 @@ like_filter = st.sidebar.slider(
     value=(min_likes, max_likes)
 )
 
-# --- Duration Filter (seconds) ---
 min_dur = int(df["duration_seconds"].min())
 max_dur = int(df["duration_seconds"].max())
 
@@ -42,28 +37,16 @@ duration_filter = st.sidebar.slider(
     value=(min_dur, max_dur)
 )
 
-# -----------------------------------
-# Apply Filters
-# -----------------------------------
 filtered_df = df[
     (df["viewCount"].between(*view_filter)) &
     (df["likeCount"].between(*like_filter)) &
     (df["duration_seconds"].between(*duration_filter))
 ]
 
-# -----------------------------------
-# Dashboard Title
-# -----------------------------------
-st.title("📊 MrBeast Videos Dashboard")
-st.write("Interactive dashboard using 3 filters (views, likes, duration).")
-
+st.title("Analytics of Mr Beast YouTube Videos")
+st.write("Adjust the filters of likes, duration, and views to show the desired subset of videos.")
 st.write(f"**Videos matching filters:** {len(filtered_df)}")
 
-# -----------------------------------
-# Charts
-# -----------------------------------
-
-# Scatter: Duration vs Views
 fig1 = px.scatter(
     filtered_df,
     x="duration_seconds",
@@ -75,7 +58,6 @@ fig1 = px.scatter(
 )
 st.plotly_chart(fig1, use_container_width=True)
 
-# Bar: Likes vs Views
 fig2 = px.bar(
     filtered_df.sort_values("viewCount", ascending=False),
     x="viewCount",
@@ -85,7 +67,6 @@ fig2 = px.bar(
 )
 st.plotly_chart(fig2, use_container_width=True)
 
-# Scatter: Likes vs Comments
 fig3 = px.scatter(
     filtered_df,
     x="likeCount",
@@ -94,7 +75,6 @@ fig3 = px.scatter(
 )
 st.plotly_chart(fig3, use_container_width=True)
 
-# Histogram: Duration distribution
 fig4 = px.histogram(
     filtered_df,
     x="duration_seconds",
