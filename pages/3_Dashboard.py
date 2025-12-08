@@ -3,4 +3,4 @@ import pandas as pd
 import plotly.express as px
 import os
 
-st.write("finish this")
+st.title("Mr Beast Video Analytics")
