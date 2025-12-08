@@ -56,9 +56,9 @@ fig1 = px.scatter(
     size="likeCount",
     color="commentCount",
     hover_data=["likeCount", "commentCount"],
-    title="Duration vs View Count (Bubble size = likes)"
+    title="View Count by Video Duration"
 )
-fig.update_layout(
+fig1.update_layout(
     xaxis_title="Video Duration",
     yaxis_title="Nunber of Views"
 )
@@ -71,7 +71,7 @@ fig2 = px.bar(
     hover_data=["commentCount", "duration_seconds"],
     title="Like Count by View Count",
 )
-fig.update_layout(
+fig2.update_layout(
     xaxis_title="Views",
     yaxis_title="Likes"
 )
@@ -81,9 +81,9 @@ fig3 = px.scatter(
     filtered_df,
     x="likeCount",
     y="commentCount",
-    title="Like Count vs Comment Count"
+    title="Likes by Comment Number"
 )
-fig.update_layout(
+fig3.update_layout(
     xaxis_title="Likes",
     yaxis_title="Nunber of Comments"
 )
@@ -95,7 +95,7 @@ fig4 = px.histogram(
     nbins=20,
     title="Distribution of Video Duration"
 )
-fig.update_layout(
+fig4.update_layout(
     xaxis_title="Video Duration",
     yaxis_title="Count"
 )
