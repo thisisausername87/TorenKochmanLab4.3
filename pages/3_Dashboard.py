@@ -7,6 +7,7 @@ data_path = os.path.join(os.getcwd(), "data", "MrBeast_youtube_stats.csv")
 df = pd.read_csv(data_path)
 
 st.sidebar.header("Filters")
+
 min_views = int(df["viewCount"].min())
 max_views = int(df["viewCount"].max())
 
@@ -43,25 +44,26 @@ filtered_df = df[
     (df["duration_seconds"].between(*duration_filter))
 ]
 
-st.title("Analytics of Mr Beast YouTube Videos")
-st.write("Adjust the filters of likes, duration, and views to show the desired subset of videos.")
+st.title("📊 MrBeast Videos Dashboard")
+st.write("Interactive dashboard using 3 filters (views, likes, duration).")
+
 st.write(f"**Videos matching filters:** {len(filtered_df)}")
 
 fig1 = px.scatter(
     filtered_df,
-    x="Video Duration in Seconds",
-    y="Views",
+    x="duration_seconds",
+    y="viewCount",
     size="likeCount",
     color="commentCount",
     hover_data=["likeCount", "commentCount"],
-    title="View Count by Video Duration"
+    title="Duration vs View Count (Bubble size = likes)"
 )
 st.plotly_chart(fig1, use_container_width=True)
 
 fig2 = px.bar(
     filtered_df.sort_values("viewCount", ascending=False),
-    x="Views",
-    y="Likes",
+    x="viewCount",
+    y="likeCount",
     hover_data=["commentCount", "duration_seconds"],
     title="Like Count by View Count",
 )
@@ -69,15 +71,15 @@ st.plotly_chart(fig2, use_container_width=True)
 
 fig3 = px.scatter(
     filtered_df,
-    x="Likes",
-    y="Number of Comments",
-    title="Likes on a Video by Comments"
+    x="likeCount",
+    y="commentCount",
+    title="Like Count vs Comment Count"
 )
 st.plotly_chart(fig3, use_container_width=True)
 
 fig4 = px.histogram(
     filtered_df,
-    x="Video Duration in Seconds",
+    x="duration_seconds",
     nbins=20,
     title="Distribution of Video Duration"
 )
