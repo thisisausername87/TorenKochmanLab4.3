@@ -44,8 +44,8 @@ filtered_df = df[
     (df["duration_seconds"].between(*duration_filter))
 ]
 
-st.title("📊 MrBeast Videos Dashboard")
-st.write("Interactive dashboard using 3 filters (views, likes, duration).")
+st.title("Mr Beast Video Statistics Analysis")
+st.write("Filter videos by subset using the sliders on the left side pannel.")
 
 st.write(f"**Videos matching filters:** {len(filtered_df)}")
 
@@ -58,6 +58,10 @@ fig1 = px.scatter(
     hover_data=["likeCount", "commentCount"],
     title="Duration vs View Count (Bubble size = likes)"
 )
+fig.update_layout(
+    xaxis_title="Video Duration",
+    yaxis_title="Nunber of Views"
+)
 st.plotly_chart(fig1, use_container_width=True)
 
 fig2 = px.bar(
@@ -67,6 +71,10 @@ fig2 = px.bar(
     hover_data=["commentCount", "duration_seconds"],
     title="Like Count by View Count",
 )
+fig.update_layout(
+    xaxis_title="Views",
+    yaxis_title="Likes"
+)
 st.plotly_chart(fig2, use_container_width=True)
 
 fig3 = px.scatter(
@@ -75,6 +83,10 @@ fig3 = px.scatter(
     y="commentCount",
     title="Like Count vs Comment Count"
 )
+fig.update_layout(
+    xaxis_title="Likes",
+    yaxis_title="Nunber of Comments"
+)
 st.plotly_chart(fig3, use_container_width=True)
 
 fig4 = px.histogram(
@@ -82,5 +94,9 @@ fig4 = px.histogram(
     x="duration_seconds",
     nbins=20,
     title="Distribution of Video Duration"
+)
+fig.update_layout(
+    xaxis_title="Video Duration",
+    yaxis_title="Count"
 )
 st.plotly_chart(fig4, use_container_width=True)
