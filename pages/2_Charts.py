@@ -13,8 +13,8 @@ st.subheader("This page shows various examples of different charts relating to t
 
 fig = px.box(views)
 st.plotly_chart(fig)
-st.write("This bar graph shows the starting median salaries for each undergraduate major. The graph is understood by looking at the value on the left of the graph and correlating it with the major on the bottom under the bar. More information for each major can be seen by hovering over the bars.") 
-st.write("This data shows that some of the highest paying majors are physicians assistant, chemical engineering, computer engineering, and electrical engineering. There are no outliers or otherwise unusual data points in the graph. One conclusion that can be found from the information is that STEM related majors that are more mathematically and scientifically technical tend to have higher paying positions as opposed to the more humanitarian jobs such as journalism and music.")
+st.write("This box plot shows the summary statistics for the view counts of Mr Beast videos.. The plot is understood by looking at the five lines of the plot, being the minimum, first quartile, median, third quartile, and maximum from bottom to top. More information can be seen by hovering over the plot.") 
+st.write("This data shows that the median amount of views of a Mr Beast video is about 49 million. There are a few significant values, although none seem to be outliers. One conclusion that can be drawn from this is that on average a video published by Mr Beast will get anywhere from about 14 to 81 million views.")
 
 fig = px.histogram(df_sorted, x="viewCount", nbins=20, title="Counts of Starting Salaries")
 fig.update_layout(
